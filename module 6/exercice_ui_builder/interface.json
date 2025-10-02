@@ -1,0 +1,21 @@
+{
+  "root": "BoxLayout",
+  "properties": {"orientation": "vertical"},
+  "children": [
+    {
+      "widget": "CustomLabel",
+      "properties": {"text": "Bienvenu !"},
+      "events": {"on_press":  "react_press", "on_state": "react_press"}
+    },
+    {
+      "widget": "TextInput",
+      "properties": {"password": true},
+      "events": {"on_double_tap": "react_press"}
+    },
+    {
+      "widget": "Button",
+      "properties": {"text": "Valider !"},
+      "events": {"on_press":  "react_press", "on_state": "react_press"}
+    }
+  ]
+}

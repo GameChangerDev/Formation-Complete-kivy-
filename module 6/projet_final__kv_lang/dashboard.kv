@@ -1,0 +1,25 @@
+#:import hex kivy.utils.get_color_from_hex
+
+<Dashboard>:
+    orientation: "vertical"
+
+    ActionBar:
+        ActionView:
+            ActionPrevious:
+            ActionButton:
+                text: "Ajouter Widget"
+                on_press: root.add_widget_dynamically()
+    BoxLayout:
+        id: widget_container
+        padding: '10dp'
+        spacing: '5dp'
+
+        CustomCard:
+            title: "Performance"
+            value: str(sum(root.data_points))
+            #on_press: print("Clic sur la carte !")
+
+        DynamicGraph:
+            data_points: root.data_points
+            on_touch_move: root.update_graph(*args)
+

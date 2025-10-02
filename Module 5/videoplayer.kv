@@ -1,0 +1,30 @@
+<VideoPlayer@BoxLayout>:
+    orientation: 'lr-tb'
+
+    Video:
+        id: video
+        source: r'C:\Users\DELL\Videos\neil\Neil_Cruz_electricien(240p).mp4'
+        state: 'play'
+        options: {'fit_mode': 'contain'}
+
+    Slider:
+        id: progress
+        min: 0
+        max: 100
+        value: 0
+        #on_value: root.seek_video(self.value)
+
+    Slider:
+        id: volume
+        min: 0
+        max: 1
+        value: 0.5
+        #on_value: root.set_volume(self.value)
+
+    Button:
+        id: play_pause_btn
+        text: 'Pause'
+        size_hint: (1, 0.2)
+        #on_press: root.toggle_play_pause()
+
+VideoPlayer:

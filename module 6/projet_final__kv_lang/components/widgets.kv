@@ -1,0 +1,32 @@
+<CustomCard@BoxLayout>:
+    title: "Titre"
+    value: "0"
+    orientation: "vertical"
+    spacing: "5dp"
+    canvas.before:
+        Color:
+            rgba: hex("#2c3e50")
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [15,]
+
+    Label:
+        text: root.title
+        font_size: "16dp"
+        bold: True
+        color: hex("#ecf0f1")
+
+    Label:
+        text: root.value
+        font_size: "24sp"
+        color: hex("#3498db")
+
+<DynamicGraph@Widget>:
+    data_points: []
+    canvas:
+        Color:
+            rgba: hex("#e74c3c")
+        Line:
+            points: [x * 10 for x in self.data_points]
+            width: 2

@@ -1,0 +1,9 @@
+[
+  {"type": "title", "title": "UI"},
+  {"type":  "bool", "title":  "Mode Sombre", "desc": "Active le mode sombre", "section":  "ui", "key": "dark_mode"},
+  {"type":  "numeric", "title":  "Taille Police", "desc": "Taille en px (10 - 50)", "section":  "ui", "key": "font_size"},
+  {"type":  "options", "title":  "theme", "desc": "Choisir couleur", "section":  "ui", "key": "theme", "options":  ["Clair", "Sombre", "Bleue"]},
+  {"type":  "string", "title":  "Message Bienvenue", "desc": "Texte d'accueil", "section":  "ui", "key": "welcome_msg"},
+  {"type":  "path", "title":  "Dossier Taches", "desc": "Ou Sauvegarder les Tâches", "section":  "files", "key": "task_dir"},
+  {"type":  "color", "title":  "Couleur Fond", "desc": "Couleur de fond", "section":  "ui", "key": "bg_color"}
+]

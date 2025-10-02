@@ -1,0 +1,13 @@
+<CollageEditor>:
+    orientation: 'vertical'
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        Button:
+            text: 'Ajouter Image'
+            on_press: root.add_image()
+        Button:
+            text: 'Sauvegarder'
+            on_press: root.save_collage()
+    ScatterPlane:
+        id: plane

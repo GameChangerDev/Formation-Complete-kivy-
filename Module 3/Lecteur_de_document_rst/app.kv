@@ -1,0 +1,32 @@
+<RstReader>:
+    orientation: 'vertical'
+
+    BoxLayout:
+        size_hint_y: 0.1
+        Button:
+            text: 'thème Clair'
+            on_press: root.colors={'background': '#ffffff', 'title': '#000000'}
+        Button:
+            text: 'Thème Sombre'
+            on_press: root.colors={'background': '#333333', 'title': '#ffffff'}
+        TextInput:
+            id: search_input
+            hint_text: 'Rechercher'
+            size_hint_x: 0.3
+        Button:
+            text: "Chercher"
+            on_press: root.search(search_input.text)
+
+    Label:
+        id: title
+        size_hint_y: 0.05
+        font_size: 20
+
+    BoxLayout:
+        id: nav
+        orientation: 'horizontal'
+        size_hint_y: 0.05
+
+    Widget:
+        id: content
+        size_hint_y: 0.8

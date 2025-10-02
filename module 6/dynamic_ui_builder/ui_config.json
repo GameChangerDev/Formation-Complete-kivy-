@@ -1,0 +1,19 @@
+{
+  "root": "BoxLayout",
+  "properties": {"orientation":  "horizontal"},
+  "children": [
+    {
+      "widget": "HeaderLabel",
+      "properties": {"text": "Bienvenue !"}
+    },
+    {
+      "widget": "TextInput",
+      "properties": {"hint_text": "Entrez votre nom"}
+    },
+    {
+      "widget": "PrimaryButton",
+      "properties": {"text":  "Valider"},
+      "events": {"on_press":  "validate_input"}
+    }
+  ]
+}

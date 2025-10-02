@@ -1,0 +1,32 @@
+[
+  {
+    "type": "string",
+    "title": "Nom de l'utilisateur de l'application",
+    "section": "User",
+    "key": "nom"
+  },
+  {
+    "type": "string",
+    "title": "Apprentissage du user",
+    "section": "User",
+    "key": "apprentissage"
+  },
+  {
+    "type": "string",
+    "title": "Niveau actuel du user",
+    "section": "User",
+    "key": "niveau"
+  },
+  {
+    "type": "string",
+    "title": "experience de l'utiliseur",
+    "section": "User",
+    "key": "experience"
+  },
+  {
+    "type": "numeric",
+    "title": "Age du user",
+    "section": "User",
+    "key": "age"
+  }
+]

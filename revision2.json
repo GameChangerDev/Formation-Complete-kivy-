@@ -1,0 +1,20 @@
+[
+  {
+    "type": "string",
+    "title": "Langage de programmation utilise",
+    "section": "Langages/Framework",
+    "key": "langage"
+  },
+  {
+    "type": "string",
+    "title": "Framework utilise pour construire des applications ",
+    "section": "Langages/Framework",
+    "key": "fw_apk"
+  },
+  {
+    "type": "string",
+    "title": "Framework utilise pour construire des sites web",
+    "section": "Langages/Framework",
+    "key": "fw_website"
+  }
+]
