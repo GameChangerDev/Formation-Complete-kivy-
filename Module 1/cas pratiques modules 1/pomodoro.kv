@@ -1,0 +1,106 @@
+<PomodoroUI>:
+    orientation: 'vertical'
+    padding: 20
+    spacing: 20
+    canvas.before:
+        Color:
+            rgba: [0.95, 0.95, 0.95, 1]
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        size_hint_y: 0.7
+        orientation: 'vertical'
+        spacing: 20
+        padding: 30
+
+        Label:
+            text: root.session_type
+            font_size: 32
+            bold: True
+            color: [0.2, 0.2, 0.2, 1]
+            size_hint_y: 0.3
+
+        Label:
+            text: root.time_display
+            font_size: 64
+            bold: True
+            color: [0.1, 0.1, 0.1, 1]
+            size_hint_y: 0.4
+
+        ProgressBar:
+            value: root.progress_value
+            max: 100
+            size_hint_y: 0.1
+            background_color: [0.8, 0.8, 0.8, 1]
+            color: [0.2, 0.6, 0.9, 1]
+
+    BoxLayout:
+        size_hint_y: 0.3
+        spacing: 15
+        padding: 10
+
+        Button:
+            text: root.button_text
+            font_size: 20
+            background: [0.2, 0.7, 0.3, 1]
+            on_press: root.toggle_session()
+
+        Button:
+            text: "Statistiques"
+            font_size: 20
+            bold: True
+            background_color: [0.3, 0.5, 0.8, 1]
+            on_press: root.show_stats()
+
+        Button:
+            text: "Réglages"
+            font_size: 18
+            background_color: [0.8, 0.5, 0.2, 1]
+            on_press: app.open_settings()
+
+<SettingsPopup>:
+    title: "Configuration Pomodoro"
+    size_hint: 0.8, 0.6
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 15
+
+        GridLayout:
+            cols: 2
+            spacing: 10
+            padding: 5
+
+            Label:
+                text: "Travail(min):"
+                font_size: 18
+            TextInput:
+                id: work_input
+                text: str(app.root.work_duration)
+                input_filter: 'int'
+                multiline: False
+
+            Label:
+                text: "Pause longue (min):"
+                font_size: 18
+            TextInput:
+                id: long_break_input
+                text: str(app.root.long_break_duration)
+                input_filter: 'int'
+                multiline: False
+
+            Label:
+                text: "Sessions avant pause longue:"
+                font_size: 18
+            TextInput:
+                id: sessions_input
+                text: str(app.root.session_before_long_break)
+                input_filter: 'int'
+                multiline: False
+        Button:
+            text: "Enregistrer"
+            font_size: 20
+            background_color: [0.2, 0.7, 0.3, 1]
+            on_press: root.save_settings()

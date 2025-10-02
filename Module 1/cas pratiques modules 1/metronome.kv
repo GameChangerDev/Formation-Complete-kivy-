@@ -1,0 +1,66 @@
+<VisualBeat>:
+    size_hint: 1, 1
+    width: 10
+    canvas.before:
+        Color:
+            rgba: self.beat_color
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+<MetronomeUI>:
+    orientation: 'vertical'
+    padding: 20
+    spacing: 30
+
+    BoxLayout:
+        size_hint_y: 0.7
+        id: visual_container
+        spacing: 10
+        padding: 10
+
+    BoxLayout:
+        size_hint_y: 0.3
+        orientation: 'vertical'
+        spacing: 10
+
+        Label:
+            text: f"BPM: {root.bpm}"
+            font_size: 24
+            bold: True
+
+        Slider:
+            id: bpm_slider
+            min: 40
+            max: 240
+            value: root.bpm
+            on_value: root.update_bpm(self.value)
+
+        BoxLayout:
+            spacing: 20
+            ToggleButton:
+                text: "Démarrer" if not self.state else "Arrêter"
+                on_state: root.toggle_play()
+                size_hint_x: 0.4
+                font_size: 18
+
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: f"Volume: {root.volume*100}%"
+                Slider:
+                    min: 0
+                    max: 1
+                    value: root.volume
+                    on_value: root.volume = self.value
+
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: f"Temps/Measure: {root.beats_per_bar}"
+                Slider:
+                    min: 2
+                    max: 8
+                    step: 1
+                    value: root.beats_per_bar
+                    on_value: root.beats_per_bar
